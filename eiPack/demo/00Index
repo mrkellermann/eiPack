@@ -1,0 +1,9 @@
+bounds		 Demo file for bounds
+ei.MD.bayes  	 Demo file for RxC Multinomial Dirichlet model with and 
+                   without covariate
+ei.reg           Demo file for Goodman's ecological regression
+ei.reg.bayes     Demo file for a Bayesian version of Goodman's ecological 
+                   regression
+lambda.MD	 Demo file for lambda.MD
+lambda.reg.bayes Demo file for lambda.reg.bayes
+lambda.reg	 Demo file for lambda.reg

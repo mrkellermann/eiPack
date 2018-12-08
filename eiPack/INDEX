@@ -1,0 +1,27 @@
+bounds                  Deterministic bounds for units satisfying row
+                        thresholds
+cover.plot              Unit-level coverage plots for beta parameters
+                        from MD EI model
+densityplot             Density plots for population level parameters
+ei.MD.bayes             Multinomial Dirichlet model for Ecological
+                        Inference in RxC tables
+ei.reg                  Ecological regression
+ei.reg.bayes            Ecological regression using Bayesian Normal
+                        regression
+lambda.MD               Calculate shares using data from MD model
+lambda.reg              Calculate shares using data from regression
+                        model
+lambda.reg.bayes        Calculate shares using data from Bayesian
+                        regression model
+mergeMD                 Combine output from multiple eiMD objects
+plot.bounds             Plot of deterministic bounds for units
+                        satisfying row thresholds
+read.betas              Function to read in eiMD parameter chains saved
+                        to disk
+redistrict              Redistricting Monte-Carlo data
+senc                    Party registration in south-east North Carolina
+tuneA                   Tuning parameters for alpha hyperpriors in RxC
+                        EI model
+tuneB                   Tuning parameters for the precinct level
+                        parameters in the RxC EI model
+tuneMD                  Generate tuning parameters for MD model
