@@ -63,8 +63,10 @@ rbycei_fcn1 (SEXP alphamatrix,
   PROTECT(hldr = allocVector(NILSXP, 1));
   ++nProtected;
 
+  /*
   PROTECT(lbm = allocMatrix(REALSXP, ng , np));
   ++nProtected;
+  */
 
   PROTECT(a_acc = allocVector(REALSXP, ng * np));
   ++nProtected;
@@ -145,7 +147,7 @@ rbycei_fcn1 (SEXP alphamatrix,
   }
 
 
-  lbm = logbetamat(betaarray, NG, NP, Precincts);
+  PROTECT(lbm = logbetamat(betaarray, NG, NP, Precincts));
 
   for(rr = 0; rr < ng; ++rr){
     for(cc = 0; cc < np; ++cc){
@@ -173,6 +175,8 @@ rbycei_fcn1 (SEXP alphamatrix,
       }
     }
   }
+  UNPROTECT(1);
+
 
 
   if(kk >= burn && ((kk % thin) == 0)){
