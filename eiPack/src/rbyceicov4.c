@@ -52,7 +52,7 @@ rbycei_fcn4 (SEXP drvector,
 
   R_len_t ii, rr, cc, qq, kk; 
   SEXP ccount, usr, hldr; 
-  SEXP usr_list, dr_dim, beta_dim, gamma_dim, delta_dim, TT_dim, RR_dim; 
+  SEXP usr_list, beta_dim, gamma_dim, delta_dim, TT_dim, RR_dim; 
   SEXP dr_acc, b_acc, g_acc, d_acc; 
   SEXP dr_draws, b_draws, g_draws, d_draws, ccount_draws, usr_draws, output_list;  
   R_len_t ng, np, npm1, prec, thin, samp, burn, iters, verbose,usr_length;
@@ -61,7 +61,7 @@ rbycei_fcn4 (SEXP drvector,
   double bprop, bprop_ref, bcurr, bcurr_ref, tt_ci, tt_Ci, bprop_x, bprop_ref_x, bcurr_x, bcurr_ref_x, ulim, bcurr_ll, bprop_ll, alpha_ci, alpha_Ci;
   double drcurr, drprop, drcurr_ll, drprop_ll, tmp_currB, tmp_propB;
   double gcurr, gprop, gcurr_ll, gprop_ll, tmp_gcurr, tmp_gprop;
-  double dcurr, dprop, dcurr_ll, dprop_ll, tmp_dcurr, tmp_dprop;
+  double dcurr, dprop; /*,dcurr_ll, dprop_ll, tmp_dcurr, tmp_dprop*/
   int covprior;
 
   ng = INTEGER(NG)[0];
@@ -120,8 +120,11 @@ rbycei_fcn4 (SEXP drvector,
   
   PROTECT(hldr = allocVector(NILSXP, 1));
   ++nProtected;
+  /*
   PROTECT(ccount = allocMatrix(REALSXP, ng, np));
   ++nProtected;
+  */
+
   PROTECT(explp = allocVector(REALSXP, ng*np*prec));
   ++nProtected;
 
@@ -376,7 +379,7 @@ rbycei_fcn4 (SEXP drvector,
     SET_VECTOR_ELT(usr_list, 4, TT);
     SET_VECTOR_ELT(usr_list, 5, RR);
 
-    ccount = cellcount(betaarray, RR, NG, NP, Precincts);
+    PROTECT(ccount = cellcount(betaarray, RR, NG, NP, Precincts));
 
     usr = usr_fun_eval(usr_fcn, usr_list, usr_env, usr_length);
 
@@ -388,6 +391,7 @@ rbycei_fcn4 (SEXP drvector,
     for(qq = 0; qq < np*ng; ++qq){
       REAL(ccount_draws)[counter + qq*samp] = REAL(ccount)[qq];
 	}
+    UNPROTECT(1);
 
     for(qq = 0; qq < ng; ++qq){
       REAL(dr_draws)[counter + qq*samp] = REAL(drvector)[qq];

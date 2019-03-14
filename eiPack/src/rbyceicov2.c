@@ -48,9 +48,9 @@ rbycei_fcn3 (SEXP drvector,
 
   int nProtected = 0, nComps = 0, counter = 0;
 
-  R_len_t ii, rr, cc, tt, qq, kk; 
+  R_len_t ii, rr, cc, qq, kk; 
   SEXP ccount, hldr; 
-  SEXP alpha_dim, beta_dim, TT_dim, RR_dim;
+  SEXP beta_dim, TT_dim, RR_dim;
   SEXP dr_acc, b_acc, g_acc, d_acc; 
   SEXP dr_draws, b_draws, g_draws, d_draws, ccount_draws, output_list;  
   R_len_t ng, np, npm1, prec, thin, samp, burn, iters, verbose;
@@ -59,7 +59,7 @@ rbycei_fcn3 (SEXP drvector,
   double bprop, bprop_ref, bcurr, bcurr_ref, tt_ci, tt_Ci, bprop_x, bprop_ref_x, bcurr_x, bcurr_ref_x, ulim, bcurr_ll, bprop_ll, alpha_ci, alpha_Ci;
   double drcurr, drprop, drcurr_ll, drprop_ll, tmp_currB, tmp_propB;
   double gcurr, gprop, gcurr_ll, gprop_ll, tmp_gcurr, tmp_gprop;
-  double dcurr, dprop, dcurr_ll, dprop_ll, tmp_dcurr, tmp_dprop;
+  double dcurr, dprop; /* ,dcurr_ll, dprop_ll, tmp_dcurr, tmp_dprop */
   int covprior; 
 
 

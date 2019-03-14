@@ -104,13 +104,15 @@ rbycei_fcn2 (SEXP alphamatrix,
   
   PROTECT(hldr = allocVector(NILSXP, 1));
   ++nProtected;
+  /*
   PROTECT(lbm = allocMatrix(REALSXP, ng , np));
   ++nProtected;
+  */
   PROTECT(usr = allocVector(REALSXP, usr_length));
   ++nProtected;
-  PROTECT(ccount = allocMatrix(REALSXP, ng, np));
+  /*PROTECT(ccount = allocMatrix(REALSXP, ng, np));
   ++nProtected;
-
+  */ 
 
   PROTECT(a_acc = allocVector(REALSXP, ng * np));
   ++nProtected;
@@ -193,7 +195,7 @@ rbycei_fcn2 (SEXP alphamatrix,
   }
 
 
-  lbm = logbetamat(betaarray, NG, NP, Precincts);
+  PROTECT(lbm = logbetamat(betaarray, NG, NP, Precincts));
 
   for(rr = 0; rr < ng; ++rr){
     for(cc = 0; cc < np; ++cc){
@@ -222,6 +224,7 @@ rbycei_fcn2 (SEXP alphamatrix,
     }
   }
 
+  UNPROTECT(1);
 
   if(kk >= burn && ((kk % thin) == 0)){
 
@@ -230,7 +233,7 @@ rbycei_fcn2 (SEXP alphamatrix,
     SET_VECTOR_ELT(usr_list, 2, TT);
     SET_VECTOR_ELT(usr_list, 3, RR);
 
-    ccount = cellcount(betaarray, RR, NG, NP, Precincts);
+    PROTECT(ccount = cellcount(betaarray, RR, NG, NP, Precincts));
 
     usr = usr_fun_eval(usr_fcn, usr_list, usr_env, usr_length);
 
@@ -244,6 +247,7 @@ rbycei_fcn2 (SEXP alphamatrix,
       REAL(a_draws)[counter + qq*samp] = REAL(alphamatrix)[qq];
       REAL(ccount_draws)[counter + qq*samp] = REAL(ccount)[qq];
 	}
+    UNPROTECT(1);
 
     if(INTEGER(Savebeta)[0] == 0){
      for(qq = 0; qq < np*ng*prec; ++qq){
