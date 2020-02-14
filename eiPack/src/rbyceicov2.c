@@ -430,10 +430,7 @@ rbycei_fcn3 (SEXP drvector,
     SET_VECTOR_ELT(output_list, 6, g_acc);
     SET_VECTOR_ELT(output_list, 7, d_acc);
     SET_VECTOR_ELT(output_list, 8, ccount_draws);
-  }
-
-
-  if(INTEGER(Savebeta)[0]!=0){
+  }else{
     PROTECT(output_list = allocVector(VECSXP, 8));
     ++nProtected; 
     SET_VECTOR_ELT(output_list, 0, dr_draws);

@@ -124,12 +124,13 @@ SEXP
 write_beta (SEXP betaarray,
 	    SEXP filenames){
 
+  int ret=0; 
   R_len_t nn, ii; 
   nn = length(filenames);
   for(ii = 0; ii < nn; ++ii){
     char tmp[500];
     sprintf(tmp, "echo \"%.16f\" | gzip >>  %s", REAL(betaarray)[ii], CHAR(STRING_ELT(filenames,ii)));
-    system(tmp);
+    ret=system(tmp);
   }
 
 

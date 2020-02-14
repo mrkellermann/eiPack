@@ -236,10 +236,7 @@ rbycei_fcn1 (SEXP alphamatrix,
     SET_VECTOR_ELT(output_list, 2, a_acc);    
     SET_VECTOR_ELT(output_list, 3, b_acc);
     SET_VECTOR_ELT(output_list, 4, ccount_draws);
-  }
-
-
-  if(INTEGER(Savebeta)[0]!=0){
+  }else{
     PROTECT(output_list = allocVector(VECSXP, 4));
     ++nProtected; 
     SET_VECTOR_ELT(output_list, 0, a_draws);
