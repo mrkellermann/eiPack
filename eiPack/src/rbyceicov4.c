@@ -450,10 +450,7 @@ rbycei_fcn4 (SEXP drvector,
     SET_VECTOR_ELT(output_list, 7, d_acc);
     SET_VECTOR_ELT(output_list, 8, ccount_draws);
     SET_VECTOR_ELT(output_list, 9, usr_draws);
-  }
-
-
-  if(INTEGER(Savebeta)[0]!=0){
+  }else{
     PROTECT(output_list = allocVector(VECSXP, 9));
     ++nProtected; 
     SET_VECTOR_ELT(output_list, 0, dr_draws);
