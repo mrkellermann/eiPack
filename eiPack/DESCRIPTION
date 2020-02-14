@@ -1,7 +1,7 @@
 Package: eiPack
 Type: Package
-Version: 0.1-9
-Date: 2019-03-13
+Version: 0.2-1
+Date: 2020-02-12
 Title: Ecological Inference and Higher-Dimension Data
         Management
 Author: Olivia Lau <olivia.lau@post.harvard.edu>, Ryan T. Moore
