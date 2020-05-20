@@ -58,21 +58,21 @@ A list containing
 \item{draws}{A list containing samples from the posterior distribution
   of the parameters.  If a covariate is included in the model, the list contains: 
 \itemize{
-  \item{\code{Dr}}{Posterior draws for Dr parameters as an R
+  \item{\code{Dr}}{ Posterior draws for Dr parameters as an R
      \eqn{\times}{x}sample matrix.  If
   \code{ret.mcmc = TRUE}, \code{Dr} is an \code{mcmc} object.}
-\item{\code{Beta}}{Posterior draws for beta parameters.  Only returned if 
+\item{\code{Beta}}{ Posterior draws for beta parameters.  Only returned if 
   \code{ret.beta = TRUE}.  If \code{ret.mcmc = 
 TRUE}, a  (R * C * units) \eqn{\times}{x} sample matrix saved as an \code{mcmc} 
 object.  Otherwise, a R \eqn{\times}{x} C \eqn{\times}{x} units
 \eqn{\times}{x} sample array}
-\item{\code{Gamma}}{Posterior draws for gamma parameters.  If \code{ret.mcmc =
+\item{\code{Gamma}}{ Posterior draws for gamma parameters.  If \code{ret.mcmc =
 TRUE}, a  (R * (C - 1)) \eqn{\times}{x} sample matrix saved as an \code{mcmc}
 object.  Otherwise, a R \eqn{\times}{x} (C - 1) \eqn{\times}{x} sample array}
-\item{\code{Delta}}{Posterior draws for delta parameters.  If \code{ret.mcmc =                 
+\item{\code{Delta}}{ Posterior draws for delta parameters.  If \code{ret.mcmc =                 
 TRUE}, a  (R * (C - 1)) \eqn{\times}{x} sample matrix saved as an \code{mcmc}      
 object.  Otherwise, a R \eqn{\times}{x}(C - 1) \eqn{\times}{x} sample array}
-\item{\code{Cell.count}}{Posterior draws for the cell counts, summed
+\item{\code{Cell.count}}{ Posterior draws for the cell counts, summed
   across units.  If \code{ret.mcmc =
     TRUE}, a (R * C) \eqn{\times}{x} sample matrix saved as an \code{mcmc} object.
   Otherwise, a R \eqn{\times}{x} C \eqn{\times}{x} sample array}
@@ -80,32 +80,32 @@ object.  Otherwise, a R \eqn{\times}{x}(C - 1) \eqn{\times}{x} sample array}
 
 If the model is fit without a covariate, the list includes:
 \itemize{
-\item{\code{Alpha}}{Posterior draws for alpha parameters.  If \code{ret.mcmc =
+\item{\code{Alpha}}{ Posterior draws for alpha parameters.  If \code{ret.mcmc =
     TRUE}, a (R * C) \eqn{\times}{x} sample matrix saved as an \code{mcmc} object.
   Otherwise, a R \eqn{\times}{x} C \eqn{\times}{x} sample array}
-\item{\code{Beta}}{Posterior draws for beta parameters.  If \code{ret.mcmc =
+\item{\code{Beta}}{ Posterior draws for beta parameters.  If \code{ret.mcmc =
     TRUE}, a (R * C * units) \eqn{\times}{x} sample matrix saved as
   an \code{mcmc} object. 
   Otherwise, a R \eqn{\times}{x} C \eqn{\times}{x} units
   \eqn{\times}{x} sample array} 
-\item{\code{Cell.count}}{Posterior draws for the cell counts, summed
+\item{\code{Cell.count}}{ Posterior draws for the cell counts, summed
   across units.  If \code{ret.mcmc =
     TRUE}, a (R * C) \eqn{\times}{x} sample matrix saved as an\code{mcmc} object.
   Otherwise, a R \eqn{\times}{x} C \eqn{\times}{x} sample array}
 }}
 
-\item{acc.ratios}{A list containing acceptance ratios for the
+\item{acc.ratios}{ A list containing acceptance ratios for the
   parameters.  If the model includes a covariate, the list includes:
 \itemize{  
-\item{\code{dr.acc}}{A vector of acceptance ratios for \code{Dr} draws}
-\item{\code{beta.acc}}{A vector of acceptance ratios for \code{Beta} draws}
-\item{\code{gamma.acc}}{A vector of acceptance ratios for \code{Gamma} and
+\item{\code{dr.acc}}{ A vector of acceptance ratios for \code{Dr} draws}
+\item{\code{beta.acc}}{ A vector of acceptance ratios for \code{Beta} draws}
+\item{\code{gamma.acc}}{ A vector of acceptance ratios for \code{Gamma} and
   \code{Delta} draws}
 }
 If the model is fit without a covariate , the list includes:
 \itemize{
-  \item{\code{alpha.acc}}{A vector of acceptance ratios for \code{Alpha} draws}
-\item{\code{beta.acc}}{A vector of acceptance ratios for \code{Beta} draws}  
+  \item{\code{alpha.acc}}{ A vector of acceptance ratios for \code{Alpha} draws}
+\item{\code{beta.acc}}{ A vector of acceptance ratios for \code{Beta} draws}  
 }}
 
 \item{usrfun}{Output from the optional \code{usrfn}}
@@ -191,13 +191,13 @@ If the model is fit without a covariate , the list includes:
    \eqn{\gamma_{rC}}{gamma_rC} and \eqn{\delta_{rC}}{delta_rC}, a list
    with four elements must be provided for \code{covariate.prior.list}:
    \itemize{
-\item{\code{mu.delta}}{an \eqn{R \times (C-1)}{R x (C-1)} matrix of
+\item{\code{mu.delta}}{ an \eqn{R \times (C-1)}{R x (C-1)} matrix of
   prior means for Delta}
-\item{\code{sigma.delta}}{an \eqn{R \times (C-1)}{R x (C-1)} matrix of
+\item{\code{sigma.delta}}{ an \eqn{R \times (C-1)}{R x (C-1)} matrix of
   prior standard deviations for Delta} 
-\item{\code{mu.gamma}}{an \eqn{R \times (C-1)}{R x (C-1)} matrix of
+\item{\code{mu.gamma}}{ an \eqn{R \times (C-1)}{R x (C-1)} matrix of
   prior means for Gamma} 
-\item{\code{sigma.gamma}}{an \eqn{R \times (C-1)}{R x (C-1)} matrix of
+\item{\code{sigma.gamma}}{ an \eqn{R \times (C-1)}{R x (C-1)} matrix of
   prior standard deviations for Gamma}}  
 
    
@@ -224,21 +224,21 @@ If the model includes a covariate, the starting values must be a list
 with the following elements, in this order:
 
 \itemize{
-\item{\code{start.dr}}{a vector of length \eqn{R}{R} of starting values for Dr.
+\item{\code{start.dr}}{ a vector of length \eqn{R}{R} of starting values for Dr.
   Starting values for Dr must be greater than zero.}
 
-\item{\code{start.betas}}{an \eqn{R \times C}{R x C} by precincts array
+\item{\code{start.betas}}{ an \eqn{R \times C}{R x C} by precincts array
 of starting values for Beta.  Each row of every precinct must sum to 1.}
 
-\item{\code{start.gamma}}{an \eqn{R \times C}{R x C} matrix of starting
+\item{\code{start.gamma}}{ an \eqn{R \times C}{R x C} matrix of starting
   values for Gamma.  Values in the right-most column must be zero.}
-\item{\code{start.delta}}{an \eqn{R \times C}{R x C} matrix of starting
+\item{\code{start.delta}}{ an \eqn{R \times C}{R x C} matrix of starting
   values for Delta.  Values in the right-most column must be zero.}
 }
 If there is no covariate, the starting values must be a list with the following elements:
 \itemize{
-\item{\code{start.alphas}}{an \eqn{R \times C}{R x C} matrix of starting values for Alpha.  Starting values for Alpha must be greater than zero.}
-\item{\code{start.betas}}{an \eqn{R \times C \times}{R x C x} units array of
+\item{\code{start.alphas}}{ an \eqn{R \times C}{R x C} matrix of starting values for Alpha.  Starting values for Alpha must be greater than zero.}
+\item{\code{start.betas}}{ an \eqn{R \times C \times}{R x C x} units array of
   starting values for Beta.  Each row in every unit must sum to 1.}}
 
 The function will accept user-specified tuning parameters as an
@@ -248,18 +248,18 @@ parameter.  For the model with a covariate, a bivariate normal
 distribution is used to generate proposals; the covariance of these
 normal distributions is fixed at zero.  If the model includes a covariate, the tuning parameters must be a list with the following elements, in this order:
 \itemize{
-\item{\code{tune.dr}}{a vector of length \eqn{R}{R} of tuning parameters for Dr}
-\item{\code{tune.beta}}{an \eqn{R \times (C-1)}{R x (C-1)} by precincts array
+\item{\code{tune.dr}}{ a vector of length \eqn{R}{R} of tuning parameters for Dr}
+\item{\code{tune.beta}}{ an \eqn{R \times (C-1)}{R x (C-1)} by precincts array
   of tuning parameters for Beta} 
-\item{\code{tune.gamma}}{an \eqn{R \times (C-1)}{R x (C-1)} matrix of tuning
+\item{\code{tune.gamma}}{ an \eqn{R \times (C-1)}{R x (C-1)} matrix of tuning
   parameters for Gamma} 
-\item{\code{tune.delta}}{an \eqn{R \times (C-1)}{R x (C-1)} matrix of tuning
+\item{\code{tune.delta}}{ an \eqn{R \times (C-1)}{R x (C-1)} matrix of tuning
   parameters for Delta}} 
  
 If there is no covariate, the tuning parameters are a list with the following elements:
 \itemize{
-\item{\code{tune.alpha}}{an \eqn{R \times C}{R x C} matrix of tuning parameters for Alpha}
-\item{\code{tune.beta}}{an \eqn{R \times (C-1)}{R x (C-1)} by precincts array
+\item{\code{tune.alpha}}{ an \eqn{R \times C}{R x C} matrix of tuning parameters for Alpha}
+\item{\code{tune.beta}}{ an \eqn{R \times (C-1)}{R x (C-1)} by precincts array
   of tuning parameters for Beta}
 }
 }
