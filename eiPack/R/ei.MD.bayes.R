@@ -9,7 +9,7 @@ ei.MD.bayes <- function(formula, covariate = NULL, total = NULL, data,
                         usrfun = NULL){
 
 
-  if(class(tune.list)=="tuneMD"){
+  if(inherits(tune.list,"tuneMD")){
     if(identical(tune.list$call$lambda1, lambda1)==FALSE){
       stop("tuning parameters assumed different prior for lambda1")}
     
@@ -151,6 +151,8 @@ output$call$covariate.prior.list <- covariate.prior.list
   return(output)
 }
   
+
+
 
 
 
