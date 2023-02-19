@@ -1,6 +1,6 @@
 lambda.reg.bayes <- function(object, columns, ret.mcmc = TRUE){
 
-  if (class(object) != "eiRegBayes")
+  if (inherits(object,"eiRegBayes")==FALSE)
     stop("'object' must be output from 'ei.reg.bayes'")
   if (missing(columns) | length(columns) < 2)
     stop("'columns' requires at least two column names")

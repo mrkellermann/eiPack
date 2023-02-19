@@ -2,7 +2,7 @@ plot.bounds <- function(x, row, column, labels = TRUE, order =
                         NULL, intersection = TRUE, xlab, ylab, col = par("fg"),
                         lty = par("lty"), lwd = par("lwd"), ...){ 
   
-  if(class(x) != "bounds"){
+  if(inherits(x,"bounds")==FALSE){
     stop("'x' must be output from 'bounds'")
   }
 
@@ -53,3 +53,4 @@ plot.bounds <- function(x, row, column, labels = TRUE, order =
     }
   }
 }
+

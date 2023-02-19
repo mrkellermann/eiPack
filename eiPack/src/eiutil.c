@@ -129,7 +129,7 @@ write_beta (SEXP betaarray,
   nn = length(filenames);
   for(ii = 0; ii < nn; ++ii){
     char tmp[500];
-    sprintf(tmp, "echo \"%.16f\" | gzip >>  %s", REAL(betaarray)[ii], CHAR(STRING_ELT(filenames,ii)));
+    snprintf(tmp, sizeof(tmp), "echo \"%.16f\" | gzip >>  %s", REAL(betaarray)[ii], CHAR(STRING_ELT(filenames,ii)));
     ret=system(tmp);
   }
 

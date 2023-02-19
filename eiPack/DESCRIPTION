@@ -1,7 +1,7 @@
 Package: eiPack
 Type: Package
-Version: 0.2-1
-Date: 2020-02-12
+Version: 0.2-2
+Date: 2023-02-18
 Title: Ecological Inference and Higher-Dimension Data
         Management
 Author: Olivia Lau <olivia.lau@post.harvard.edu>, Ryan T. Moore
@@ -15,4 +15,4 @@ Description: Provides methods for analyzing R by C ecological contingency
         and Multinomial-Dirichlet ecological inference models.  Also
         provides tools for manipulating higher-dimension data objects.
 License: GPL (>= 2)| file LICENSE
-URL: http://www.olivialau.org/software
+URL: http://www.olivialau.org/software/

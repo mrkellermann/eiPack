@@ -1,6 +1,6 @@
 lambda.reg <- function(object, columns){
 
-  if (class(object) != "eiReg")
+  if (inherits(object,"eiReg")==FALSE)
     stop("'object' must be output from 'ei.reg'")
   if (missing(columns) | length(columns) < 2)
     stop("'columns' requires at least two column names")

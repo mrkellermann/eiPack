@@ -9,7 +9,7 @@ mergeMD <- function(list, discard = 0){
   }
 
 
-  if(class(objectlist[[1]]$draws[[1]])=="mcmc"){
+  if(inherits(objectlist[[1]]$draws[[1]],"mcmc")){
     samples <- nrow(objectlist[[1]]$draws[[1]])
     for(jj in 1:length(objectlist[[1]]$draws)){
       objectlist[[1]]$draws[[jj]] <-
@@ -52,4 +52,5 @@ mergeMD <- function(list, discard = 0){
   
   
 }
+
 
